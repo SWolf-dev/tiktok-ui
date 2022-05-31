@@ -3,10 +3,17 @@
 
 :root {
     --primary: #fe2c55;
+    --text-color: black;
+    // Default layout
+    --default-header-height: 60px;
+    --default-layout-width: 1150px;
+    --default-sidebar-width: 356px;
 }
 
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html {
@@ -18,4 +25,14 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+
+button,
+input[tabindex] {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    text-decoration: none;
 }
