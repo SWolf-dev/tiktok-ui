@@ -1,0 +1,98 @@
+.search {
+    background-color: #1618230f;
+    font-family: var(--font-family);
+    width: 361px;
+    height: 46px;
+    border-radius: 92px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid transparent;
+    position: relative;
+    .search-btn {
+        position: absolute;
+        width: 52px;
+        right: 0;
+        border: none;
+        outline: none;
+        height: 100%;
+        font-size: 20px;
+        color: #a7a7ab;
+        background-color: transparent;
+        &:hover {
+            background: rgba(22, 24, 35, 0.03);
+            cursor: pointer;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: -2px;
+            right: 50px;
+            height: calc(100% - 18px);
+            width: 1px;
+            background-color: #a7a7ab;
+        }
+    }
+    input {
+        width: 252px;
+        display: block;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        margin-left: 20px;
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 35, 0.75);
+    }
+    .clear-search-btn,
+    .loading-search-btn {
+        position: absolute;
+        right: 52px;
+        width: 36px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        background-color: transparent;
+        color: #a7a7ab;
+    }
+    .search-input {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        margin-left: 20px;
+        display: flex;
+    }
+    &:focus-within {
+        border: 1px solid rgba(22, 24, 35, 0.5);
+    }
+}
+
+.search-title {
+    color: rgba(22, 24, 35, 0.5);
+    padding: 5px 12px;
+    font-weight: 300;
+    font-size: 1.4rem;
+}
+
+.content {
+    width: 361px;
+}
+
+.loading-search-btn {
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
